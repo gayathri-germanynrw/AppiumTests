@@ -1,4 +1,4 @@
-package com.cydeo.appiumtests;
+package com.cydeo.tests;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
