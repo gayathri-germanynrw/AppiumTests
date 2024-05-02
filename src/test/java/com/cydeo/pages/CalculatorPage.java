@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class CalculatorPage {
     public CalculatorPage(){
-        PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver()),this);
+        PageFactory.initElements(new AppiumFieldDecorator(Driver.getDriver("calculatorPlatform")),this);
     }
     @AndroidFindBy(accessibility = "multiply")
     public WebElement multiplyButton;
@@ -27,7 +27,7 @@ public class CalculatorPage {
     // create a method that will click on single digit
     public void clickSingleDigit(int digit){
         String idLocator="com.google.android.calculator:id/digit_"+digit;
-        WebElement number_Element=Driver.getDriver().findElement(By.id(idLocator));
+        WebElement number_Element=Driver.getDriver("calculatorPlatform").findElement(By.id(idLocator));
         number_Element.click();
     }
 
