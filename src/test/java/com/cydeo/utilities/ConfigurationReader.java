@@ -2,35 +2,23 @@ package com.cydeo.utilities;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
-public class ConfigurationReader{
-    //1 . Create property object
-    // Make it  " private " so we are limiting access of the object
-    // "static" is to make sure its created and loaded before everything else
-    private static Properties properties = new Properties();
+public class ConfigurationReader {
+    private static final Properties properties;
 
-
-    static{
-        // 2. File open using the fileInputStream
-        try {
-            FileInputStream file = new FileInputStream("configuration.properties");
-
-            // 3. Load the "properties" object
-            properties.load(file);
-
-            // close the file
-            file.close();
-        }catch(IOException e){
-            System.out.println("FILE NOT FOUND IN GIVEN PATH !!!" );
+    static {
+        try (InputStream inputStream = new FileInputStream("configuration.properties")) {
+            properties = new Properties();
+            properties.load(inputStream);
+        } catch (IOException e) {
             e.printStackTrace();
-
+            throw new RuntimeException("Failed to load properties file!");
         }
-
     }
 
-    // 4. Use the "properties" object  to read from the file(read properties)
-    public static String getProperty(String key){
-        return properties.getProperty(key);
+    public static String getProperty(String property) {
+        return properties.getProperty(property);
     }
 }
