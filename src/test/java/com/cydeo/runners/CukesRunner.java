@@ -12,9 +12,9 @@ import org.junit.runner.RunWith;
         features = "C:\\Users\\gayat\\IdeaProjects\\AppiumTests\\src\\test\\resources\\feature",
         glue = "com/cydeo/step_definitions",
         dryRun = false,
-        tags = "@SwagLabLogin"
+        //tags = "@SwagLabLogin"
         //tags="@cloudWebAppTest"
-        //tags="@remoteAndroid"
+        tags="@remoteAndroid"
         //tags="@wip"
 
 )

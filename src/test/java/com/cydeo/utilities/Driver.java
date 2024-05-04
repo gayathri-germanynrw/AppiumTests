@@ -71,44 +71,26 @@ public class Driver {
                     capsRA.setCapability("appium:deviceName", "Samsung.*");
                     capsRA.setCapability("appium:automationName", "UiAutomator2");
                     MutableCapabilities sauceOptions = new MutableCapabilities();
-                    sauceOptions.setCapability("username", "oscartestqa001");
-                    sauceOptions.setCapability("accessKey", "6c06ace9-5515-4945-b677-b97c3207cbf2");
+                    sauceOptions.setCapability("username", "oauth-gayathrikasi-61c94");
+                    sauceOptions.setCapability("accessKey", "eebebd2e-8a09-4895-b046-9987a23d7346");
                     sauceOptions.setCapability("build", "Cydeo01");
                     sauceOptions.setCapability("name", "LoginTestforSwagLabs");
                     sauceOptions.setCapability("deviceOrientation", "PORTRAIT");
                     capsRA.setCapability("sauce:options", sauceOptions);
 
                     try {
-                        url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+                        url = new URL("https://oauth-gayathrikasi-61c94:eebebd2e-8a09-4895-b046-9987a23d7346@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
                     } catch (MalformedURLException e) {
                         throw new RuntimeException(e);
                     }
                     driver = new AndroidDriver(url, capsRA);
                     break;
-                case "remote-ios-swaglabs":
-                    MutableCapabilities capsIR = new MutableCapabilities();
-                    capsIR.setCapability("platformName", "iOS");
-                    capsIR.setCapability("appium:app", "https://github.com/saucelabs/sample-app-mobile/releases/download/2.7.1/iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa");  // The filename of the mobile app
-                    capsIR.setCapability("appium:deviceName", "iPhone Simulator");
-                    capsIR.setCapability("appium:platformVersion", "current_major");
-                    capsIR.setCapability("appium:automationName", "XCUITest");
-                    capsIR.setCapability("appPackage","com.swaglabsmobileapp");
-                    capsIR.setCapability("appActivity","com.swaglabsmobileapp.SplashActivity");
-                    MutableCapabilities sauceOptionsIR = new MutableCapabilities();
-                    sauceOptionsIR.setCapability("username", "oscartestqa001");
-                    sauceOptionsIR.setCapability("accessKey", "6c06ace9-5515-4945-b677-b97c3207cbf2");
-                    sauceOptionsIR.setCapability("build", "CydeoIOS001");
-                    sauceOptionsIR.setCapability("name", "LoginTestsForIOS");
-                    sauceOptionsIR.setCapability("deviceOrientation", "PORTRAIT");
-                    capsIR.setCapability("sauce:options", sauceOptionsIR);
 
-                    try {
-                        url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
-                    } catch (MalformedURLException e) {
-                        throw new RuntimeException(e);
-                    }
-                    driver = new IOSDriver(url, capsIR);
-                    break;
+
+
+
+
+
                 case "local-android-etsy":
                     caps.setApp(testDir+"/etsy.apk");
                     caps.setAppPackage("com.etsy.android");
