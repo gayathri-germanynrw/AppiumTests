@@ -8,6 +8,7 @@ public class Hooks {
 
     @Before
     public void SetUp(){
+
         System.out.println("Steps that needs to before each scenario can be put here");
     }
 

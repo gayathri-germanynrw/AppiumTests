@@ -20,5 +20,16 @@ public class TC03_CalculatorPOM_Test {
 
         Assertions.assertEquals(40,Integer.parseInt(resultText));
   }
+    @Test
+    public void divideTest(){
+        // 20 / 5 = 4
+        calculatorPage.clickSingleDigit(10);
+        calculatorPage.clickSingleDigit(5);
+        calculatorPage.divideButton.click();
+        calculatorPage.clickSingleDigit(5);
+        calculatorPage.equalsButton.click();
+        String resultText = calculatorPage.result.getText();
+        Assertions.assertEquals("4",resultText);
+    }
 
 }

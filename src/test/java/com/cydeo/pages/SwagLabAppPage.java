@@ -1,3 +1,4 @@
+
 package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
@@ -20,7 +21,9 @@ public class SwagLabAppPage {
     @AndroidFindBy(accessibility = "test-LOGIN")
     public WebElement LoginButton;
 
-
     @AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"test-Item title\"])[1]")
     public WebElement sampleItem;
+
+    @AndroidFindBy(xpath = "(//*[@content-desc=\"test-ADD TO CART\"])[1]/android.widget.TextView")
+    public WebElement addProduct;
 }

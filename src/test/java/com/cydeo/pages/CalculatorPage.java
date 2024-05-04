@@ -31,6 +31,9 @@ public class CalculatorPage {
         number_Element.click();
     }
 
+    @AndroidFindBy(accessibility = "divide")
+    public WebElement divideButton;
+
 
 
 
